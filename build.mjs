@@ -17,6 +17,7 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 const ARCH = process.argv[2];
 const ANDROID_APIV = process.argv[3];
+const NO_THREADS = process.argv[4];
 
 exec_command("mkdir -p tmp");
 
@@ -98,7 +99,7 @@ exec_command(`patch -N -p0 < ../patches/deps-uv-uv.gyp.patch`, full_source_path,
 
 switch (ARCH) {
   case "arm":
-
+    exec_command(`patch -N -p0 < ../patches/tools-v8_gypfiles-v8.gyp.patch`, full_source_path, true);
     break;
   case "arm64":
 
@@ -108,5 +109,5 @@ switch (ARCH) {
 }
 
 exec_command(`./android-configure ${ndk_dir} ${ARCH} ${ANDROID_APIV}`, full_source_path, true);
-exec_command(`make -j1`, full_source_path, true);
+exec_command(NO_THREADS ? `make -j${NO_THREADS}` : "make", full_source_path, true);
 exec_command(`DESTDIR="../out/${CPU_ARCH}" make -j16 install`, full_source_path, true);
