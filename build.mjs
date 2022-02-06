@@ -61,7 +61,7 @@ switch (ARCH) {
 if (!fs.existsSync("tmp/node-latest.tar.gz")) {
   exec_command('wget -q https://nodejs.org/en/download/current/ -O tmp/node.html', false, true);
   const dpage_html = exec_command('cat tmp/node.html');
-  const dpath = dpage_html.toString().match(/(?<=<th>Source Code<\/th>\n.*\n.*)(https:\/\/nodejs\.org\/dist\/v17\.3\.1\/node-v.[^>]*\.tar\.gz)/g)[0];
+  const dpath = dpage_html.toString().match(/(?<=<th>Source Code<\/th>\n.*\n.*)(https:\/\/nodejs\.org\/dist\/.*\/node-v.[^>]*\.tar\.gz)/g)[0];
   exec_command(`wget -q ${dpath} -O tmp/node-latest.tar.gz`, false, true);
 }
 
@@ -108,5 +108,5 @@ switch (ARCH) {
 }
 
 exec_command(`./android-configure ${ndk_dir} ${ARCH} ${ANDROID_APIV}`, full_source_path, true);
-exec_command(`make -j16`, full_source_path, true);
+exec_command(`make -j1`, full_source_path, true);
 exec_command(`DESTDIR="../out/${CPU_ARCH}" make -j16 install`, full_source_path, true);
