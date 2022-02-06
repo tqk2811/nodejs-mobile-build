@@ -1,0 +1,21 @@
+--- android-configure	2022-01-24 04:28:58.877868553 +0200
++++ android-configure.mod	2022-01-24 04:28:50.637855211 +0200
+@@ -26,7 +26,7 @@
+ case $ARCH in
+     arm)
+         DEST_CPU="arm"
+-        TOOLCHAIN_NAME="armv7-linux-androideabi"
++        TOOLCHAIN_NAME="armv7a-linux-androideabi"
+         ;;
+     x86)
+         DEST_CPU="ia32"
+@@ -79,7 +79,8 @@
+     ./configure \
+         --dest-cpu=$DEST_CPU \
+         --dest-os=android \
+-        --without-snapshot \
++        --without-intl \
+         --openssl-no-asm \
++        --shared \
+         --cross-compiling
+ fi
