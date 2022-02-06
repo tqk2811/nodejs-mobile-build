@@ -8,7 +8,10 @@ and then
 ```
 ./build.mjs arm64 24
 ```
-this will build for ARMv8 architecture with API version 24. To utilize multiple threads of your cpu add a third argument indicating the number of threads you wanna use.
+this will build for ARMv8 architecture with API version 24. To utilize multiple threads of your cpu add a third argument indicating the number of threads you wanna use i.e:
+```
+.build.mjs arm 24 4
+```
 
 Platforms options:
 
