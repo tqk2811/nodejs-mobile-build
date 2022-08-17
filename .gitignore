@@ -1,0 +1,9 @@
+/node-arm
+/node-arm64
+/android-ndk*
+/.vscode
+/node-v*
+/tmp
+/out
+/build-node-execute/*.o
+/build-node-execute/out

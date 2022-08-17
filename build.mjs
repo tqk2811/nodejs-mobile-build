@@ -62,7 +62,8 @@ switch (ARCH) {
 if (!fs.existsSync("tmp/node-latest.tar.gz")) {
   exec_command('wget -q https://nodejs.org/en/download/current/ -O tmp/node.html', false, true);
   const dpage_html = exec_command('cat tmp/node.html');
-  const dpath = dpage_html.toString().match(/(?<=<th>Source Code<\/th>\n.*\n.*)(https:\/\/nodejs\.org\/dist\/.*\/node-v.[^>]*\.tar\.gz)/g)[0];
+  //const dpath = dpage_html.toString().match(/(?<=<th>Source Code<\/th>\n.*\n.*)(https:\/\/nodejs\.org\/dist\/.*\/node-v.[^>]*\.tar\.gz)/g)[0];
+  const dpath = "https://nodejs.org/dist/v17.4.0/node-v17.4.0.tar.gz";
   exec_command(`wget -q ${dpath} -O tmp/node-latest.tar.gz`, false, true);
 }
 
