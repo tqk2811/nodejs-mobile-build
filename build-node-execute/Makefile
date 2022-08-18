@@ -8,8 +8,8 @@ main.o: main.cpp
 
 CopyLib: $(OUT)
 	cp $(LNODE)/libnode.so $(OUT)/libnode.so
-	cp $(SYSROOT)/usr/lib/$(TARGET)/libc++_shared.so $(OUT)/libc++_shared.so
-	cp $(SYSROOT)/usr/lib/$(TARGET)/$(API)/liblog.so $(OUT)/liblog.so
+	cp $(NDK_LINK)/libc++_shared.so $(OUT)/libc++_shared.so
+	cp $(NDK_LINK)/$(API)/liblog.so $(OUT)/liblog.so
 
 $(OUT):
 	mkdir -p $(OUT)
