@@ -11,7 +11,8 @@ export AR=$TOOLCHAIN/bin/llvm-ar
 export RANLIB=$TOOLCHAIN/bin/llvm-ranlib
 export STRIP=$TOOLCHAIN/bin/llvm-strip
 export SYSROOT=$TOOLCHAIN/sysroot
-export NDK_LINK=$SYSROOT/usr/lib/$TARGET
+export LNDK=$SYSROOT/usr/lib/$TARGET
+export INDK=$SYSROOT/usr/include
 
 #Nodejs
 export NODE=../out/aarch64/usr/local
