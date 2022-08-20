@@ -25,8 +25,8 @@ export OUT=out/armv7a
 # CFLAGS_BASE_LIST="-c -D_7ZIP_AFFINITY_DISABLE=1 -pipe -fPIE -fexceptions -frtti \
 #         -mcpu=cortex-a53+crc+crypto -Wno-suggest-override -Wno-suggest-destructor-override \
 #         -ffunction-sections -fdata-sections -Wl,--gc-sections" \
-
-export CFLAGS= -fvisibility=default -fPIE
-export LDFLAGS= -rdynamic -fPIE -pie
+# -nostdinc -nostdlib
+export CFLAGS="-fvisibility=default -fPIE"
+export LDFLAGS="-rdynamic -fPIE -pie"
 
 make CC=$CC CXX=$CXX -f Makefile all

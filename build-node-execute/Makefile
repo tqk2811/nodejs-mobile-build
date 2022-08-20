@@ -4,7 +4,7 @@ Linker=-L$(LNODE) -L$(LNDK) -L$(LNDK)/$(API)
 all: prebuild CopyLib program
 
 program: main.o
-	$(CXX) $(Include) $(CFLAGS) $(LDFLAGS) --sysroot=$(SYSROOT) -lm -o $(OUT)/node main.o $(OUT)/libnode.so $(OUT)/libc++_shared.so
+	$(CXX) $(Include) $(CFLAGS) $(LDFLAGS) --sysroot=$(SYSROOT) -lm -o $(OUT)/node main.o $(OUT)/libnode.so
 main.o: main.cpp
 	$(CXX) $(Include) $(CFLAGS) $(LDFLAGS) --sysroot=$(SYSROOT) -c main.cpp
 
