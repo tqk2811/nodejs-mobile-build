@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "nan": "^2.16.0",
+    "node-addon-api": "^5.0.0",
+    "node-gyp": "^9.3.0"
+  }
+}

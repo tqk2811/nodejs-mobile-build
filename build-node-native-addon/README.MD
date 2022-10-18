@@ -1,0 +1,2 @@
+-Build & Push node in `build-node-execute` to android first (android_install***.bat)   
+-Build this addon with `./build.sh arm` or `./build.sh arm64` and then push to android (android_install***.bat)   

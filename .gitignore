@@ -7,3 +7,7 @@
 /out
 /build-node-execute/*.o
 /build-node-execute/out
+/build-node-native-addon/build
+node_modules
+*.node
+*.o
